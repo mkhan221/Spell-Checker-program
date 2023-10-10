@@ -1,0 +1,15 @@
+Script started on Mon 09 Oct 2023 11:10:54 AM CDT
+]0;py9242yg@csci4:~/project4[?1034h[py9242yg@csci4 project4]$ g++ -std=gnu++++++[K[K[K[K[K+0x prjec[K[K[Koject4.coo[K[Kpp
+]0;py9242yg@csci4:~/project4[py9242yg@csci4 project4]$ ./a.out
+Enter the name of the file that contains words to check: myp report.txt
+
+The following words in the file "myreport.txt" are not spelled correctly:
+Stude
+Reseach
+Resul
+Outpt
+
+Thanks for using the spell checker system.
+]0;py9242yg@csci4:~/project4[py9242yg@csci4 project4]$ exit
+
+Script done on Mon 09 Oct 2023 11:11:29 AM CDT

@@ -1,0 +1,71 @@
+#ifndef _Doubly_LINKED_BAG
+#define _Doubly_LINKED_BAG
+
+#include "BagInterface.h"
+#include "DoubleNode.h"
+
+template<class ItemType>
+class DoublyLinkedBag : public BagInterface<ItemType>
+{
+ private:
+ DoubleNode<ItemType>* headPtr; // Pointer to first node
+  int itemCount;           // Current count of bag items
+   
+  // Returns either a pointer to the node containing a given entry
+  // or the null pointer if the entry is not in the bag.
+  DoubleNode<ItemType>* getPointerTo(const ItemType& target) const;
+   
+ public:
+  /*Default constructor*/
+  /*@pre none
+    /*@post intializes default values to data member*/
+  DoublyLinkedBag();
+  /*Copy constructor*/
+  /*@param aBag instance of DoublyLinkedBag
+    /*@pre none
+    /*@post copies the bag into a new object*/    
+  DoublyLinkedBag(const DoublyLinkedBag<ItemType>& aBag);// Copy constructor
+  /*Destructor*/
+  /*@pre none
+    /*@post deallocates memory*/
+  virtual ~DoublyLinkedBag();// Destructor should be virtual
+  /*Member function*/
+  /*@pre none
+    /*@post gets the size of the bag*/ 
+  int getCurrentSize() const;
+  /*Member function*/
+  /*@pre none
+    /*@post checks to see if the bag is empty*/ 
+  bool isEmpty() const;
+  /*Member function*/
+  /*@param newEntry
+    /*@pre none
+    /*@post adds an item to the bag*/ 
+  bool add(const ItemType& newEntry);
+  /*Member function*/
+  /*@param anEntry
+    /*@pre none
+    /*@post removes an entry from the bag*/ 
+  bool remove(const ItemType& anEntry);
+  /*Member function*/
+  /*@pre none
+    /*@post clears the bag*/ 
+  void clear();
+  /*Member function*/
+  /*@param anEntry
+    /*@pre none
+    /*@post checks to see if an item is in the bag*/ 
+  bool contains(const ItemType& anEntry) const;
+  /*Member function*/
+  /*@param anEntry
+    /*@pre none
+    /*@post computes the number of times an item appears in the bag*/ 
+  int getFrequencyOf(const ItemType& anEntry) const;
+  /*Member function*/
+  /*@pre none
+    /*@post dynamic array able to resize itself*/ 
+  vector<ItemType> toVector() const;
+}; 
+
+#include "DoublyLinkedBag.cpp"
+#endif
